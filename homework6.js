@@ -9,8 +9,8 @@ var pool = mysql.createPool({
   password: 'default',
   database: 'student'
 });
-
 app.set('port', 5463)
+
 
 app.get('/reset-table',function(req,res,next){
   var context = {};
@@ -28,6 +28,7 @@ app.get('/reset-table',function(req,res,next){
     })
   });
 });
+
 
 app.listen(app.get('port'), function(){
     console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
