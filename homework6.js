@@ -1,11 +1,14 @@
 
 var mysql = require('mysql');
+var app = express();
+
 var pool = mysql.createPool({
   host  : 'localhost',
   user  : 'student',
   password: 'default',
   database: 'student'
 });
+
 app.set('port', 5462)
 
 app.get('/reset-table',function(req,res,next){
