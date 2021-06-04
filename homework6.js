@@ -10,7 +10,7 @@ var pool = mysql.createPool({
   database: 'student'
 });
 
-app.set('port', 5462)
+app.set('port', 5463)
 
 app.get('/reset-table',function(req,res,next){
   var context = {};
