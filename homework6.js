@@ -1,6 +1,9 @@
 
 var mysql = require('mysql');
 var express = require('express');
+var handlebars = require('express-handlebars').create({defaultLayout:'main'});
+app.engine('handlebars', handlebars.engine);
+app.set('view engine', 'handlebars');
 var app = express();
 
 var pool = mysql.createPool({
@@ -27,7 +30,7 @@ app.get('/reset-table',function(req,res,next){
     "lbs BOOLEAN)";
     pool.query(createString, function(err){
       context.results = "Table reset";
-      res.render('home',context);
+      res.render('main',context);
     })
   });
 });
