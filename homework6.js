@@ -2,9 +2,9 @@
 var mysql = require('mysql');
 var express = require('express');
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
+var app = express();
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-var app = express();
 
 var pool = mysql.createPool({
   connectionLimit : 10,
