@@ -4,11 +4,14 @@ var express = require('express');
 var app = express();
 
 var pool = mysql.createPool({
-  host  : 'localhost',
-  user  : 'student',
-  password: 'default',
-  database: 'student'
+  connectionLimit : 10,
+  host            : 'classmysql.engr.oregonstate.edu',
+  user            : 'cs290_murphbra',
+  password        : '5461',
+  database        : 'cs290_murphbra'
 });
+
+  
 app.set('port', 5463)
 
 
